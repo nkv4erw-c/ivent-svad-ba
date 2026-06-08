@@ -366,35 +366,60 @@ fieldset input {
 
 .venue {
   display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 28px;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 50px;
   align-items: center;
+  margin-top: 30px;
+}
+
+.venue-text {
+  background: rgba(255, 250, 241, 0.75);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--line);
+  border-radius: 32px;
+  padding: 40px;
+  box-shadow: 0 20px 70px rgba(63, 49, 35, .08);
+}
+
+.venue-text .eyebrow {
+  margin-bottom: 12px;
+}
+
+.venue-text h2 {
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(48px, 5vw, 80px);
+  line-height: .95;
+  margin-bottom: 24px;
 }
 
 .venue-text p:not(.eyebrow) {
   font-size: 18px;
-  line-height: 1.7;
+  line-height: 1.8;
   color: var(--taupe);
 }
 
 .venue-gallery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
+  grid-template-columns: 1.2fr .8fr;
+  grid-template-rows: 260px 260px;
+  gap: 18px;
 }
 
 .venue-gallery img {
   width: 100%;
-  height: 260px;
+  height: 100%;
   object-fit: cover;
   border-radius: 28px;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, .13);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, .12);
+  transition: .35s ease;
+}
+
+.venue-gallery img:hover {
+  transform: translateY(-6px);
 }
 
 .venue-gallery img:first-child {
-  grid-row: span 2;
-  height: 100%;
-  min-height: 534px;
+  grid-row: 1 / 3;
 }
 
 @keyframes pop {
@@ -428,15 +453,20 @@ fieldset input {
 
   .venue {
     grid-template-columns: 1fr;
+    gap: 24px;
   }
-
+  
+  .venue-text {
+    padding: 28px;
+  }
+  
   .venue-gallery {
     grid-template-columns: 1fr;
+    grid-template-rows: auto;
   }
-
+  
   .venue-gallery img,
   .venue-gallery img:first-child {
     height: 260px;
-    min-height: 0;
   }
 }
