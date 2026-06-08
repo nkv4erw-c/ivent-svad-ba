@@ -1,4 +1,4 @@
-const weddingDate = new Date('2026-08-29T17:00:00+05:00');
+const weddingDate = new Date('2026-08-28T17:00:00+05:00');
 function tick(){const diff=Math.max(0,weddingDate-new Date());const s=Math.floor(diff/1000);days.textContent=Math.floor(s/86400);hours.textContent=Math.floor(s%86400/3600);minutes.textContent=Math.floor(s%3600/60);seconds.textContent=s%60}tick();setInterval(tick,1000);
 const observer=new IntersectionObserver(e=>e.forEach(x=>x.isIntersecting&&x.target.classList.add('visible')),{threshold:.15});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 const modal=document.getElementById('rsvpModal');document.querySelectorAll('[data-open-rsvp]').forEach(b=>b.onclick=()=>modal.showModal());document.querySelector('[data-close-rsvp]').onclick=()=>modal.close();
